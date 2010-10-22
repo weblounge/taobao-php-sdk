@@ -1,0 +1,17 @@
+PHP SDK for the Taobao Open API.
+
+Usage
+=====
+<?php
+
+// Initiate:
+require_once 'Taobao.php';
+$objTaobao = new Taobao("YOUR APP ID", "YOUR APP SECRET");
+$objTaobao->setSessionKey($_GET['top_session']);
+
+// To make a api call:
+try {
+    $result = $objTaobao->api('taobao.jianghu.user.getProfile');
+} catch (Exception $e) {
+    var_dump($e);
+}
